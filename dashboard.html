@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | Mini SIAKAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="brand">
+        <div class="logo-box">
+        <img
+            src="assets/img/logo-mini-siakad-2.png"
+            class="logo-header"
+            alt="Mini SIAKAD"
+        />
+        </div>
+    <div class="brand-text">
+      <strong>Sistem Akademik</strong>
+      <span>Mini SIAKAD</span>
+    </div>
+    </div>
+
+  <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+    </header>
+
+
+  <!-- ALERT -->
+  <div id="alertContainer" class="alert hidden"></div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+  <div class="sidebar-brand">
+    <img
+      src="assets/img/logo-mini-siakad.png"
+      class="logo-sidebar"
+      alt="Mini SIAKAD"
+    />
+  </div>
+
+  <ul>
+    <li><button data-page="krs">📘 KRS</button></li>
+    <li><button data-page="jadwal">📅 Jadwal</button></li>
+    <li><button data-page="nilai">📊 Nilai / KHS</button></li>
+    <li><button data-page="ipk">🎓 IPK</button></li>
+  </ul>
+</aside>
+
+
+    <!-- CONTENT -->
+    <main id="content" class="page fade-in">
+      <div class="card">
+        <h3>Dashboard</h3>
+        <p>
+          Selamat datang di <strong>Mini SIAKAD</strong>.  
+          Pilih menu di samping untuk mengakses layanan akademik.
+        </p>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- FOOTER -->
+<footer class="app-footer">
+  <p>
+    © 2026 <strong>Mini SIAKAD</strong> — Sistem Akademik Mini  
+    <span class="wm">• Built for learning & portfolio</span>
+  </p>
+</footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

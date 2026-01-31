@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | Mini SIAKAD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/favicon.ico" />
+</head>
+<body class="auth-page">
+
+  <main class="login-container fade-in">
+    <div class="login-header">
+      <img src="assets/img/logo-mini-siakad.png" class="logo" alt="Mini SIAKAD">
+      <p>Simulasi Login Mahasiswa</p>
+    </div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="nim">NIM</label>
+        <input type="text" id="nim" placeholder="Masukkan NIM" required />
+      </div>
+
+      <div class="form-group">
+        <label for="name">Nama</label>
+        <input type="text" id="name" placeholder="Nama lengkap" required />
+      </div>
+
+      <div class="form-group">
+        <label for="semester">Semester</label>
+        <select id="semester">
+          <option value="1">Semester 1</option>
+          <option value="3">Semester 3</option>
+          <option value="5">Semester 5</option>
+          <option value="7">Semester 7</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">
+        Masuk
+      </button>
+    </form>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
