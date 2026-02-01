@@ -340,15 +340,38 @@ RESPONSIVE MOBILE (HP)
 
   /* LAYOUT */
   .container {
-    grid-template-columns: 1fr;
-    min-height: auto;
+    display: block;
   }
 
-  /* SIDEBAR → SLIDE */
+  /* MATIKAN SIDEBAR STICKY & FIXED */
   .sidebar {
-    top: 78px;
-    height: calc(100vh - 78px);
+    position: relative;
+    top: 0;
+    height: auto;
+
+    transform: none !important;
+    box-shadow: none;
+    border-right: none;
+    margin-bottom: 1rem;
   }
+
+  /* SIDEBAR MENU JADI CARD */
+  .sidebar ul {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    padding: 0.6rem;
+  }
+
+  .sidebar li {
+    margin-bottom: 0.3rem;
+  }
+
+  .sidebar button {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
 
   /* ACTIVE STATE (nanti via JS) */
   .sidebar.active {
@@ -357,57 +380,69 @@ RESPONSIVE MOBILE (HP)
 
   /* CONTENT */
   .page {
-    padding: 1.2rem;
-    height: auto;
+    width: 100%;
+    padding: 1rem;
   }
 
-  /* TABLE */
+   /* TABLE → CARD */
   .table-wrapper {
-    overflow: visible; /* ⬅️ penting */
+    overflow: visible;
   }
 
   .table,
   .table thead,
   .table tbody,
-  .table th,
-  .table td,
-  .table tr {
+  .table tr,
+  .table td {
     display: block;
     width: 100%;
   }
 
-  /* Sembunyikan header */
   .table thead {
     display: none;
   }
 
-  /* Card per row */
+  /* CARD */
+  /* CENTER SEMUA ISI CARD */
   .table tbody tr {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-    padding: 0.8rem 1rem;
-    margin-bottom: 1rem;
+    text-align: center;
   }
 
+  /* TD JADI COLUMN */
   .table tbody td {
-    border: none;
-    padding: 0.4rem 0;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.85rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
   }
 
+  /* LABEL DI ATAS ISI */
   .table tbody td::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: var(--muted);
+    margin-bottom: 0.1rem;
+    text-align: center;
   }
 
-  /* Button & select tetap rapi */
+  /* NAMA MATA KULIAH → PALING DOMINAN */
+  .table tbody td:nth-child(2) {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  /* BUTTON TETAP CENTER & FULL */
+  .table tbody td:last-child {
+    width: 100%;
+    margin-top: 0.8rem;
+  }
+
   .table button,
-  .table select {
-    margin-left: auto;
+  .table .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table .btn-danger {
+    background: #dc2626;
   }
 
   /* BUTTON */
