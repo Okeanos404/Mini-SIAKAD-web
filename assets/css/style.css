@@ -335,8 +335,13 @@ RESPONSIVE MOBILE (HP)
 
   /* HEADER */
   .app-header {
-    padding: 0.8rem 1rem;
+    padding: 0.9rem 1.2rem;
   }
+
+  
+
+
+
 
   /* LAYOUT */
   .container {
@@ -346,21 +351,11 @@ RESPONSIVE MOBILE (HP)
 
   /* SIDEBAR → SLIDE */
   .sidebar {
-    position: fixed;              /* ⬅️ keluar dari layout */
-    top: 72px;                     /* sesuaikan tinggi header */
-    left: 0;
-    width: 240px;
-    height: calc(100vh - 72px);
-
-    background: #fff;
-    z-index: 1200;
-
-    transform: translateX(-100%); /* sembunyi default */
-    transition: transform 0.3s ease;
-
-    box-shadow: var(--shadow-md);
+    top: 78px;
+    height: calc(100vh - 78px);
   }
 
+  /* ACTIVE STATE (nanti via JS) */
   .sidebar.active {
     transform: translateX(0);
   }
@@ -495,15 +490,5 @@ FOOTER (WATERMARK)
   .app-footer {
     font-size: 0.7rem;
     padding: 1rem 0.8rem;
-  }
-}
-
-.mobile-menu {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .mobile-menu {
-    display: block;
   }
 }
