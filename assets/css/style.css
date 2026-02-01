@@ -338,11 +338,6 @@ RESPONSIVE MOBILE (HP)
     padding: 0.9rem 1.2rem;
   }
 
-  
-
-
-
-
   /* LAYOUT */
   .container {
     grid-template-columns: 1fr;
@@ -368,11 +363,51 @@ RESPONSIVE MOBILE (HP)
 
   /* TABLE */
   .table-wrapper {
-    overflow-x: auto;
+    overflow: visible; /* ⬅️ penting */
   }
 
-  .table {
-    min-width: 680px;
+  .table,
+  .table thead,
+  .table tbody,
+  .table th,
+  .table td,
+  .table tr {
+    display: block;
+    width: 100%;
+  }
+
+  /* Sembunyikan header */
+  .table thead {
+    display: none;
+  }
+
+  /* Card per row */
+  .table tbody tr {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .table tbody td {
+    border: none;
+    padding: 0.4rem 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted);
+  }
+
+  /* Button & select tetap rapi */
+  .table button,
+  .table select {
+    margin-left: auto;
   }
 
   /* BUTTON */
