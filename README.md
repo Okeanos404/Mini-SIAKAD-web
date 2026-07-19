@@ -1,171 +1,99 @@
-# 🎓 Mini SIAKAD — Sistem Akademik Mini (Frontend Simulation)
+# 🏫 SIAP Merdeka (Sistem Informasi Akademik Pelajar)
 
-Mini SIAKAD adalah aplikasi web **simulasi Sistem Informasi Akademik** yang dibangun menggunakan **HTML, CSS, dan JavaScript (ES Modules)**.  
-Proyek ini bertujuan sebagai **media pembelajaran**, **latihan arsitektur frontend**, dan **portfolio GitHub**.
+**SIAP Merdeka** adalah aplikasi web simulasi **Sistem Informasi Akademik (SIAKAD)** yang khusus disesuaikan dengan konsep pendidikan terbaru di Indonesia, yaitu **Kurikulum Merdeka**. Dibangun dengan arsitektur frontend modern menggunakan **HTML, CSS, dan JavaScript (ES Modules)** murni tanpa bantuan framework yang berat.
 
-Aplikasi ini mensimulasikan alur dasar sistem akademik seperti:
-- Login mahasiswa
-- Kartu Rencana Studi (KRS)
-- Jadwal kuliah
-- Nilai / KHS
-- Perhitungan IPK
+Proyek ini sangat cocok untuk **media pembelajaran**, **demonstrasi UI/UX interaktif**, maupun sebagai **portfolio frontend developer**.
 
 > ⚠️ **Catatan:**  
-> Mini SIAKAD adalah **frontend-only project** (tanpa backend & database).  
-> Data disimpan menggunakan **LocalStorage** untuk keperluan simulasi.
+> Proyek ini murni berbasis **Frontend (Client-side)** tanpa backend maupun database eksternal. Semua data operasional (seperti nilai, status jurusan, dan preferensi akun) disimpan sementara dan diproses menggunakan **LocalStorage**.
 
 ---
 
-## ✨ Fitur Utama
+## ✨ Fitur-fitur Utama
 
-### 🔐 Autentikasi (Simulasi)
-- Login mahasiswa (NIM, Nama, Semester)
-- Validasi sederhana
-- Session berbasis LocalStorage
+### 🔐 Sistem Login Terintegrasi
+- Autentikasi berbasis **NISN** dan **Password**.
+- Menggunakan state management sederhana dengan LocalStorage.
 
-### 📘 Kartu Rencana Studi (KRS)
-- Menampilkan daftar mata kuliah
-- Tambah & hapus mata kuliah
-- Perhitungan total SKS otomatis
-- Pencegahan duplikasi KRS
+### ⚙️ Pengaturan Akun Lengkap
+- Siswa dapat mengunggah **Foto Profil (Avatar)** langsung dari perangkat (disimpan dalam format Base64).
+- Kemampuan mengubah informasi pribadi seperti Nama Lengkap, Jenis Kelamin, Tanggal Lahir, Umur, dan Alamat.
+- Sinkronisasi otomatis ke header halaman tanpa perlu memuat ulang (*refresh*).
 
-### 📅 Jadwal Kuliah
-- Jadwal berdasarkan mata kuliah yang diambil
-- Tampilan tabel akademik yang rapi
+### 📊 Rapor Akademik (Kurikulum Merdeka)
+- Input dan pemantauan nilai setiap mata pelajaran per fase/semester.
+- Perhitungan dan penampilan rata-rata nilai secara *real-time*.
 
-### 📊 Nilai / KHS
-- Input nilai (A–E)
-- Update nilai secara real-time
-- Re-render otomatis saat nilai berubah
+### 🎓 Rapor Projek Penguatan Profil Pelajar Pancasila (P5)
+- Sistem penilaian berbasis predikat (Belum Berkembang, Mulai Berkembang, Berkembang Sesuai Harapan, Sangat Berkembang) untuk 6 dimensi utama Profil Pelajar Pancasila.
 
-### 🎓 IPK
-- Perhitungan IPK otomatis
-- Berdasarkan SKS & bobot nilai
-- Sinkron dengan KRS & KHS
+### 🎯 Penentuan / Asesmen Jurusan
+- Mengakomodasi penjurusan atau minat bakat siswa (IPA/IPS).
+- Menyesuaikan jadwal dan kurikulum pelajaran secara otomatis berdasarkan pilihan siswa.
 
----
+### 📅 Jadwal Pelajaran Dinamis
+- Daftar mata pelajaran terperinci sesuai kelas dan pilihan jurusan.
+- Indikator tabel yang elegan dan mudah dibaca.
 
-## 🧱 Struktur Proyek
+### 💳 Informasi Pembayaran
+- Simulasi fitur keuangan, rincian biaya SPP, uang pangkal, maupun kegiatan sekolah.
 
-```
-├── 📁 assets
-│   ├── 📁 css
-│   │   └── 🎨 style.css
-│   ├── 📁 img
-│   │   ├── 🖼️ logo-mini-siakad-2.png
-│   │   └── 🖼️ logo-mini-siakad.png
-│   └── 📄 favicon.ico
-├── 📁 js
-│   ├── 📁 akademik
-│   │   ├── 📄 ipk.js
-│   │   ├── 📄 jadwal.js
-│   │   ├── 📄 krs.js
-│   │   └── 📄 nilai.js
-│   ├── 📁 core
-│   │   ├── 📄 alert.js
-│   │   ├── 📄 auth.js
-│   │   ├── 📄 router.js
-│   │   └── 📄 storage.js
-│   ├── 📁 data
-│   │   └── 📄 dummyData.js
-│   ├── 📁 pages
-│   │   ├── 📄 ipkPage.js
-│   │   ├── 📄 jadwalPage.js
-│   │   ├── 📄 khsPage.js
-│   │   └── 📄 krsPage.js
-│   └── 📄 main.js
-├── 📝 README.md
-├── 🌐 dashboard.html
-├── 🌐 index.html
-└── 🌐 login.html
-```
+### 🖨️ Export Laporan ke PDF
+- Terintegrasi dengan fitur **Download PDF** pada Rapor Akademik, Rapor P5, dan Jadwal.
+- Menggunakan `html2pdf` dan dilengkapi dengan rendering **Kop Surat (Logo Sekolah)** secara otomatis untuk dokumen resmi.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## 💻 Teknologi yang Digunakan
 
-- **HTML5**
-- **CSS3**
-  - CSS Variables
-  - Flexbox & Grid
-  - Responsive Design
-  - Micro animation
-- **JavaScript (ES6+)**
-  - ES Modules
-  - DOM Manipulation
-  - LocalStorage API
-
-Tanpa:
-- Backend
-- Framework (React, Vue, dsb)
-- Database
+- **HTML5 & CSS3**
+  - Desain modern (*Glassmorphism*, gradasi warna eksklusif, CSS Variables).
+  - Sistem layout yang **100% Responsif** menggunakan CSS Grid dan Flexbox.
+- **JavaScript (Vanilla ES6+)**
+  - Arsitektur berbasis **ES Modules** (`import` / `export`).
+  - Sistem routing (SPA - *Single Page Application* behavior) buatan sendiri tanpa framework.
+  - Interaksi DOM dan state management dinamis.
+- **Library Tambahan**
+  - `html2pdf.bundle.min.js` (Hanya dipanggil dari CDN untuk keperluan Export PDF).
 
 ---
 
-## 📱 Responsive Design
+## 📱 Mobile-Friendly (Responsif)
 
-Mini SIAKAD dirancang **mobile-friendly**:
-- Sidebar berubah menjadi slide menu di layar kecil
-- Tabel dapat di-scroll horizontal
-- Layout tetap rapi di desktop & smartphone
-
----
-
-## 🚀 Cara Menjalankan
-
-### Opsi 1 — VS Code (Recommended)
-1. Clone repository ini
-2. Buka folder di **VS Code**
-3. Install ekstensi **Live Server**
-4. Klik kanan `login.html` → **Open with Live Server**
-
-### Opsi 2 — Browser Langsung
-1. Download / clone project
-2. Buka `login.html` menggunakan browser
-
-> ⚠️ Karena menggunakan ES Modules, **tidak disarankan membuka file langsung tanpa server**.
+Sistem telah dirancang agar sempurna saat dibuka lewat perangkat seluler (*Smartphone*).
+- Form dan kartu akan menyesuaikan ukuran layar agar tidak terpotong (mengurangi ukuran *padding*).
+- Navigasi *Sidebar* utama otomatis beralih menjadi *Sliding Menu* tersembunyi yang muncul dari sisi kanan layar.
+- Tabel-tabel data panjang mendukung gulir horizontal (*scroll*).
 
 ---
 
-## 🎯 Tujuan Proyek
+## 🔑 Data Uji Coba (Dummy Accounts)
 
-- Latihan arsitektur frontend modular
-- Simulasi sistem akademik
-- Portfolio GitHub mahasiswa
-- Dasar sebelum migrasi ke:
-  - Backend (Node.js / Laravel)
-  - Database (MySQL / MongoDB)
-  - Framework (React / Vue)
+Untuk masuk ke dalam *dashboard*, silakan gunakan kredensial berikut.  
+**Password default untuk semua akun adalah: `password`**
 
----
-
-## 🔮 Pengembangan Selanjutnya (Future Plan)
-
-- 🔐 Role Admin & Dosen
-- 🗄️ Backend API
-- 📡 Database real
-- 🧾 Export KRS / KHS ke PDF
-- 🌙 Dark Mode
-- 📊 Chart IPK
+- **NISN 10001** (Budi Santoso - Kls 10A)
+- **NISN 10002** (Siti Aminah - Kls 10B)
+- **NISN 11001** (Andi Saputra - Kls 11 IPA)
+- **NISN 11002** (Dewi Lestari - Kls 11 IPA)
+- **NISN 11003** (Rina Kusuma - Kls 11 IPS)
+- **NISN 11004** (Agus Pratama - Kls 11 IPS)
 
 ---
 
-## 👤 Author
+## 🚀 Cara Menjalankan Aplikasi
 
-**Riyan**  
-Mahasiswa Sistem Informasi  
-Project ini dibuat untuk keperluan pembelajaran & portfolio.
+Aplikasi ini menggunakan sistem *JavaScript Modules*, sehingga browser mencegahnya berjalan melalui protokol sederhana `file://`. Anda wajib menjalankannya melalui *Local Web Server*.
+
+**Metode yang Disarankan (VS Code):**
+1. Buka folder proyek ini di editor **Visual Studio Code**.
+2. Pastikan ekstensi **Live Server** (oleh Ritwick Dey) sudah terpasang.
+3. Buka file `login.html`.
+4. Klik tombol **"Go Live"** di bilah bawah VS Code atau klik kanan file lalu pilih **Open with Live Server**.
+5. Browser akan otomatis membuka aplikasi. Silakan login.
 
 ---
 
 ## 📄 Lisensi
 
-Proyek ini bersifat **open for learning**.  
-Bebas digunakan untuk:
-- Referensi belajar
-- Tugas kuliah
-- Pengembangan pribadi
-
-❌ Tidak untuk penggunaan komersial tanpa izin.
-
----
+Proyek simulasi ini bebas digunakan, dimodifikasi, maupun dikembangkan untuk keperluan pendidikan, tugas sekolah/kuliah, dan referensi portofolio secara **Gratis / Open-Source**.

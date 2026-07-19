@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Metallic Light Blue Gradient -->
+    <linearGradient id="metalBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff" /> <!-- Highlight -->
+      <stop offset="25%" stop-color="#93c5fd" /> <!-- Mid Blue -->
+      <stop offset="50%" stop-color="#3b82f6" /> <!-- Deep Blue -->
+      <stop offset="75%" stop-color="#bfdbfe" /> <!-- Reflection Highlight -->
+      <stop offset="100%" stop-color="#1d4ed8" /> <!-- Dark Blue Edge -->
+    </linearGradient>
+    
+    <filter id="shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <!-- Shield Base -->
+    <path d="M 50 5 L 85 20 L 85 50 C 85 75 50 95 50 95 C 50 95 15 75 15 50 L 15 20 Z" 
+          fill="none" 
+          stroke="url(#metalBlue)" 
+          stroke-width="5" 
+          stroke-linejoin="round"/>
+    
+    <!-- Book -->
+    <path d="M 50 35 L 70 30 L 70 65 L 50 70 Z" fill="url(#metalBlue)" opacity="0.9" />
+    <path d="M 50 35 L 30 30 L 30 65 L 50 70 Z" fill="url(#metalBlue)" />
+    <!-- Book Center Line (Divider) -->
+    <line x1="50" y1="35" x2="50" y2="70" stroke="#ffffff" stroke-width="1.5" opacity="0.4" />
+    
+    <!-- Cap -->
+    <path d="M 50 15 L 75 25 L 50 35 L 25 25 Z" fill="url(#metalBlue)" />
+  </g>
+</svg>

@@ -1,7 +1,11 @@
-import { renderKRS } from "../pages/krsPage.js";
-import { renderKHS } from "../pages/khsPage.js";
+import { renderKRS } from "../pages/rencanaPage.js";
+import { renderKHS } from "../pages/raporPage.js";
 import { renderJadwal } from "../pages/jadwalPage.js";
-import { renderIPK } from "../pages/ipkPage.js";
+import { renderIPK } from "../pages/p5Page.js";
+import { renderAsesmen } from "../pages/asesmenPage.js";
+import { renderTKA } from "../pages/tkaPage.js";
+import { renderKeuangan } from "../pages/keuanganPage.js";
+import { renderAkun } from "../pages/akunPage.js";
 
 export function loadPage(page, container) {
   container.innerHTML = "";
@@ -21,6 +25,22 @@ export function loadPage(page, container) {
 
     case "ipk":
       renderIPK(container);
+      break;
+      
+    case "asesmen":
+      renderAsesmen(container);
+      break;
+
+    case "tka":
+      renderTKA(container);
+      break;
+
+    case "keuangan":
+      renderKeuangan(container);
+      break;
+
+    case "akun":
+      renderAkun(container);
       break;
 
     default:

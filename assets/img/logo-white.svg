@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="37 17 126 146" fill="none" stroke="url(#silver)" stroke-width="3">
+  <defs>
+    <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0e0e0" />
+      <stop offset="25%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#9e9e9e" />
+      <stop offset="75%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#bdbdbd" />
+    </linearGradient>
+  </defs>
+  <!-- Outer Shield -->
+  <path d="M100 160 C 100 160, 160 130, 160 70 L 160 40 L 100 20 L 40 40 L 40 70 C 40 130, 100 160, 100 160 Z" stroke-width="6" stroke-linejoin="round" />
+  
+  <!-- Inner Shield (Dashed detail) -->
+  <path d="M100 148 C 100 148, 148 122, 148 73 L 148 48 L 100 32 L 52 48 L 52 73 C 52 122, 100 148, 100 148 Z" stroke-width="2.5" stroke-dasharray="4 4" />
+  
+  <!-- Graduation Cap (Toga) -->
+  <path d="M100 45 L 65 60 L 100 75 L 135 60 Z" fill="url(#silver)" stroke="none"/>
+  <!-- Cap Tassel -->
+  <path d="M128 63 v 14" stroke-width="3"/>
+  <circle cx="128" cy="80" r="3" fill="url(#silver)" stroke="none"/>
+
+  <!-- Open Book -->
+  <path d="M100 130 v -35 M 60 90 c 12 -5, 25 -5, 40 5 v 35 c -15 -10, -28 -10, -40 -5 Z M 140 90 c -12 -5, -25 -5, -40 5 v 35 c 15 -10, 28 -10, 40 -5 Z" stroke-width="4" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Book Pages Details -->
+  <path d="M 68 102 c 8 -3, 18 -3, 27 2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 132 102 c -8 -3, -18 -3, -27 2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 68 112 c 8 -3, 18 -3, 27 2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 132 112 c -8 -3, -18 -3, -27 2" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Stars / Academic Sparkles -->
+  <path d="M45 90 l -3 3 m 0 -6 l 6 6" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M155 90 l -3 3 m 0 -6 l 6 6" stroke-width="2.5" stroke-linecap="round"/>
+
+</svg>

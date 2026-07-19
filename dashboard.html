@@ -2,31 +2,42 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <title>Dashboard | Mini SIAKAD</title>
+  <title>Dashboard | SIAP Merdeka</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="icon" href="assets/favicon.ico?v=2" type="image/x-icon" />
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="app-header">
     <div class="brand">
-        <div class="logo-box">
+      <div class="logo-box">
         <img
-            src="assets/img/logo-mini-siakad-2.png"
+            src="assets/img/logo-white.svg"
             class="logo-header"
-            alt="Mini SIAKAD"
+            alt="SIAP Merdeka"
         />
         </div>
     <div class="brand-text">
-      <strong>Sistem Akademik</strong>
-      <span>Mini SIAKAD</span>
+      <strong style="margin: 0; line-height: 1.2;">SIAP Merdeka</strong>
+      <span style="margin: 0; line-height: 1.2;">Sistem Informasi Akademik Pelajar</span>
     </div>
     </div>
 
-  <button id="logoutBtn" class="btn btn-secondary">Logout</button>
-    </header>
+    <div class="header-right">
+      <div class="user-profile">
+        <span id="userName">Siswa</span>
+        <div class="avatar" id="userAvatar">S</div>
+      </div>
+      <button id="mobileMenuBtn" class="mobile-menu-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
 
 
   <!-- ALERT -->
@@ -35,22 +46,33 @@
   <!-- MAIN -->
   <div class="container">
 
+    <!-- SIDEBAR OVERLAY -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
     <!-- SIDEBAR -->
-    <aside class="sidebar">
+    <aside id="sidebar" class="sidebar">
   <div class="sidebar-brand">
     <img
-      src="assets/img/logo-mini-siakad.png"
+      src="assets/img/logo-new.png"
       class="logo-sidebar"
-      alt="Mini SIAKAD"
+      alt="Sistem Akademik SMA"
     />
   </div>
 
   <ul>
-    <li><button data-page="krs">📘 KRS</button></li>
-    <li><button data-page="jadwal">📅 Jadwal</button></li>
-    <li><button data-page="nilai">📊 Nilai / KHS</button></li>
-    <li><button data-page="ipk">🎓 IPK</button></li>
+    <li><button data-page="krs">📘 Mata Pelajaran Saya</button></li>
+    <li><button data-page="jadwal">📅 Jadwal Pelajaran</button></li>
+    <li><button data-page="asesmen">🎯 Penentuan Jurusan</button></li>
+    <li><button data-page="tka">📝 Ujian TKA</button></li>
+    <li><button data-page="nilai">📊 Rapor Akademik</button></li>
+    <li><button data-page="ipk">🎓 Rapor P5</button></li>
+    <li><button data-page="keuangan">💳 Pembayaran</button></li>
+    <li><button data-page="akun">⚙️ Pengaturan Akun</button></li>
   </ul>
+  
+  <div style="margin-top: auto; padding-top: 1rem;">
+    <button id="logoutBtn">🚪 Logout</button>
+  </div>
 </aside>
 
 
@@ -59,8 +81,8 @@
       <div class="card">
         <h3>Dashboard</h3>
         <p>
-          Selamat datang di <strong>Mini SIAKAD</strong>.  
-          Gunakan menu untuk mengakses layanan akademik.
+          Selamat datang di <strong>Sistem Akademik SMA</strong>.  
+          Gunakan menu untuk mengakses layanan akademik Kurikulum Merdeka.
         </p>
       </div>
     </main>
@@ -70,11 +92,12 @@
   <!-- FOOTER -->
 <footer class="app-footer">
   <p>
-    © 2026 <strong>Mini SIAKAD</strong> — Sistem Akademik Mini  
+    © 2026 <strong>Sistem Akademik SMA</strong> — Kurikulum Merdeka  
     <span class="wm">• Built for learning & portfolio</span>
   </p>
 </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

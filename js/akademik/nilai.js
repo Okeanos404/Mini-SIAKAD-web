@@ -1,20 +1,36 @@
 import { load, save } from "../core/storage.js";
+import { getUser } from "../core/auth.js";
+import { studentGrades } from "../data/dummyData.js";
 
 const NILAI_KEY = "siakad_nilai";
 
 export function getNilai() {
-  return load(NILAI_KEY, []);
+  const user = getUser();
+  if (!user) return [];
+  
+  // Try local storage for this specific user
+  const allNilai = load(NILAI_KEY, {});
+  if (allNilai[user.nisn]) return allNilai[user.nisn];
+  
+  // Fallback to dummy data
+  return studentGrades[user.nisn] || [];
 }
 
 export function setNilai(code, grade) {
-  const nilai = getNilai();
-  const idx = nilai.findIndex(n => n.code === code);
+  const user = getUser();
+  if (!user) return;
+  
+  const allNilai = load(NILAI_KEY, {});
+  const userNilai = allNilai[user.nisn] || (studentGrades[user.nisn] ? [...studentGrades[user.nisn]] : []);
+  
+  const idx = userNilai.findIndex(n => n.code === code);
 
   if (idx >= 0) {
-    nilai[idx].grade = grade;
+    userNilai[idx].grade = grade;
   } else {
-    nilai.push({ code, grade });
+    userNilai.push({ code, grade });
   }
 
-  save(NILAI_KEY, nilai);
+  allNilai[user.nisn] = userNilai;
+  save(NILAI_KEY, allNilai);
 }
