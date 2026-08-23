@@ -53,21 +53,21 @@ export function renderTKA(container) {
   `;
 
   if (typeof window.anime !== 'undefined') {
-    window.anime.timeline({ easing: 'easeOutExpo' })
+    window.anime.timeline({ easing: 'easeOutQuart' })
     .add({
       targets: container.querySelectorAll('h3, p'),
       opacity: [0, 1],
-      translateY: [20, 0],
-      duration: 600,
-      delay: window.anime.stagger(100)
+      translateY: [30, 0],
+      duration: 800,
+      delay: window.anime.stagger(150)
     })
     .add({
       targets: container.querySelectorAll('.card'),
       opacity: [0, 1],
-      translateY: [20, 0],
-      duration: 600,
-      delay: window.anime.stagger(100)
-    }, '-=400');
+      translateY: [30, 0],
+      duration: 800,
+      delay: window.anime.stagger(150)
+    }, '-=500');
   }
 
   const startBtn = document.getElementById("startTkaBtn");

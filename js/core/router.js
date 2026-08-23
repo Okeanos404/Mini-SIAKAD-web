@@ -55,9 +55,9 @@ export function loadPage(page, container) {
     window.anime({
       targets: container,
       opacity: [0, 1],
-      translateY: [15, 0],
-      duration: 400,
-      easing: 'easeOutExpo'
+      translateY: [25, 0],
+      duration: 600,
+      easing: 'easeOutQuart'
     });
   }
 }

@@ -75,26 +75,26 @@ export function renderAkun(container) {
   `;
   
   if (typeof window.anime !== 'undefined') {
-    window.anime.timeline({ easing: 'easeOutExpo' })
+    window.anime.timeline({ easing: 'easeOutQuart' })
     .add({
       targets: container.querySelectorAll('h3'),
       opacity: [0, 1],
-      translateY: [20, 0],
-      duration: 600
+      translateY: [30, 0],
+      duration: 800
     })
     .add({
       targets: container.querySelectorAll('.akun-card'),
       opacity: [0, 1],
-      translateY: [20, 0],
-      duration: 600
-    }, '-=400')
+      translateY: [30, 0],
+      duration: 800
+    }, '-=500')
     .add({
       targets: container.querySelectorAll('.form-group, #avatarPreview, label'),
       opacity: [0, 1],
-      translateY: [10, 0],
-      duration: 400,
-      delay: window.anime.stagger(50)
-    }, '-=400');
+      translateY: [20, 0],
+      duration: 600,
+      delay: window.anime.stagger(100)
+    }, '-=500');
   }
 
   let currentAvatarBase64 = avatar;

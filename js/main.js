@@ -10,39 +10,39 @@ document.addEventListener("DOMContentLoaded", () => {
     // Anime.js Entry Animations
     if (typeof anime !== 'undefined') {
       anime.timeline({
-        easing: 'easeOutExpo',
+        easing: 'easeOutQuart',
       })
       .add({
         targets: '.login-container',
         opacity: [0, 1],
-        translateY: [30, 0],
-        duration: 800
+        translateY: [40, 0],
+        duration: 1000
       })
       .add({
         targets: '.login-header img, .login-header h2, .login-header p',
         opacity: [0, 1],
-        translateY: [20, 0],
-        duration: 600,
-        delay: anime.stagger(100)
-      }, '-=400')
+        translateY: [25, 0],
+        duration: 800,
+        delay: anime.stagger(150)
+      }, '-=600')
       .add({
         targets: '.form-group',
         opacity: [0, 1],
-        translateX: [-20, 0],
-        duration: 600,
-        delay: anime.stagger(100)
-      }, '-=400')
+        translateX: [-30, 0],
+        duration: 800,
+        delay: anime.stagger(150)
+      }, '-=600')
       .add({
         targets: '.btn-primary',
         opacity: [0, 1],
-        scale: [0.9, 1],
-        duration: 500
-      }, '-=400')
+        scale: [0.95, 1],
+        duration: 700
+      }, '-=600')
       .add({
         targets: '#loginForm > div:last-child',
         opacity: [0, 1],
-        duration: 600
-      }, '-=400');
+        duration: 800
+      }, '-=600');
     }
 
     const form = document.getElementById("loginForm");
@@ -81,33 +81,33 @@ document.addEventListener("DOMContentLoaded", () => {
     // Anime.js Dashboard Entry Animations
     if (typeof anime !== 'undefined') {
       anime.timeline({
-        easing: 'easeOutExpo',
+        easing: 'easeOutQuart',
       })
       .add({
         targets: '.app-header',
         opacity: [0, 1],
         translateY: [-50, 0],
-        duration: 800
+        duration: 1000
       })
       .add({
         targets: '#sidebar',
         opacity: [0, 1],
         translateX: [-50, 0],
-        duration: 800
-      }, '-=600')
+        duration: 1000
+      }, '-=800')
       .add({
         targets: '#sidebar ul li',
         opacity: [0, 1],
-        translateX: [-20, 0],
-        duration: 500,
-        delay: anime.stagger(50)
-      }, '-=600')
+        translateX: [-30, 0],
+        duration: 700,
+        delay: anime.stagger(100)
+      }, '-=800')
       .add({
         targets: '#content',
         opacity: [0, 1],
-        translateY: [30, 0],
-        duration: 800
-      }, '-=600');
+        translateY: [40, 0],
+        duration: 1000
+      }, '-=800');
     }
 
     const content = document.getElementById("content");
