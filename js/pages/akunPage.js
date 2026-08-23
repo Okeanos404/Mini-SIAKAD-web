@@ -74,6 +74,29 @@ export function renderAkun(container) {
     </div>
   `;
   
+  if (typeof window.anime !== 'undefined') {
+    window.anime.timeline({ easing: 'easeOutExpo' })
+    .add({
+      targets: container.querySelectorAll('h3'),
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600
+    })
+    .add({
+      targets: container.querySelectorAll('.akun-card'),
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600
+    }, '-=400')
+    .add({
+      targets: container.querySelectorAll('.form-group, #avatarPreview, label'),
+      opacity: [0, 1],
+      translateY: [10, 0],
+      duration: 400,
+      delay: window.anime.stagger(50)
+    }, '-=400');
+  }
+
   let currentAvatarBase64 = avatar;
 
   // Handle avatar file selection

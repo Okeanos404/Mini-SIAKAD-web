@@ -50,6 +50,24 @@ export function renderAsesmen(container) {
     </div>
   `;
 
+  if (typeof window.anime !== 'undefined') {
+    window.anime.timeline({ easing: 'easeOutExpo' })
+    .add({
+      targets: container.querySelectorAll('h3, p'),
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600,
+      delay: window.anime.stagger(100)
+    })
+    .add({
+      targets: container.querySelectorAll('.card'),
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600,
+      delay: window.anime.stagger(100)
+    }, '-=400');
+  }
+
   const form = document.getElementById("asesmenForm");
   form.addEventListener("submit", (e) => {
     e.preventDefault();

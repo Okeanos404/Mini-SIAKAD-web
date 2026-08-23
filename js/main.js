@@ -7,6 +7,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // LOGIN PAGE
   if (path.includes("login.html") || path.endsWith("/") || path === "") {
+    // Anime.js Entry Animations
+    if (typeof anime !== 'undefined') {
+      anime.timeline({
+        easing: 'easeOutExpo',
+      })
+      .add({
+        targets: '.login-container',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 800
+      })
+      .add({
+        targets: '.login-header img, .login-header h2, .login-header p',
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 600,
+        delay: anime.stagger(100)
+      }, '-=400')
+      .add({
+        targets: '.form-group',
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        duration: 600,
+        delay: anime.stagger(100)
+      }, '-=400')
+      .add({
+        targets: '.btn-primary',
+        opacity: [0, 1],
+        scale: [0.9, 1],
+        duration: 500
+      }, '-=400')
+      .add({
+        targets: '#loginForm > div:last-child',
+        opacity: [0, 1],
+        duration: 600
+      }, '-=400');
+    }
+
     const form = document.getElementById("loginForm");
     
     if(form) {
@@ -38,6 +76,38 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isAuthenticated()) {
       window.location.href = "login.html";
       return;
+    }
+
+    // Anime.js Dashboard Entry Animations
+    if (typeof anime !== 'undefined') {
+      anime.timeline({
+        easing: 'easeOutExpo',
+      })
+      .add({
+        targets: '.app-header',
+        opacity: [0, 1],
+        translateY: [-50, 0],
+        duration: 800
+      })
+      .add({
+        targets: '#sidebar',
+        opacity: [0, 1],
+        translateX: [-50, 0],
+        duration: 800
+      }, '-=600')
+      .add({
+        targets: '#sidebar ul li',
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        duration: 500,
+        delay: anime.stagger(50)
+      }, '-=600')
+      .add({
+        targets: '#content',
+        opacity: [0, 1],
+        translateY: [30, 0],
+        duration: 800
+      }, '-=600');
     }
 
     const content = document.getElementById("content");

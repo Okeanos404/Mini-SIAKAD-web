@@ -52,6 +52,24 @@ export function renderTKA(container) {
     </div>
   `;
 
+  if (typeof window.anime !== 'undefined') {
+    window.anime.timeline({ easing: 'easeOutExpo' })
+    .add({
+      targets: container.querySelectorAll('h3, p'),
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600,
+      delay: window.anime.stagger(100)
+    })
+    .add({
+      targets: container.querySelectorAll('.card'),
+      opacity: [0, 1],
+      translateY: [20, 0],
+      duration: 600,
+      delay: window.anime.stagger(100)
+    }, '-=400');
+  }
+
   const startBtn = document.getElementById("startTkaBtn");
   startBtn.addEventListener("click", () => {
     // Generate random scores between 400 and 800

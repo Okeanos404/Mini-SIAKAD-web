@@ -49,4 +49,15 @@ export function loadPage(page, container) {
         <p>Pilih menu di samping.</p>
       `;
   }
+
+  // Anime.js Page Transition
+  if (typeof window.anime !== 'undefined') {
+    window.anime({
+      targets: container,
+      opacity: [0, 1],
+      translateY: [15, 0],
+      duration: 400,
+      easing: 'easeOutExpo'
+    });
+  }
 }
